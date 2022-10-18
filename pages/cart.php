@@ -8,12 +8,6 @@ if (!isset($_SESSION['user']) || $_SESSION['user'] == "") {
 }
 
 $total;
-
-foreach ($_COOKIE as $k=>$v) {
-       
-    echo $k;
-    
-    }
     
 foreach ($_COOKIE as $k => $v) {
     $pos = strpos($k, "_");

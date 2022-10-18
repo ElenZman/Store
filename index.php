@@ -61,7 +61,6 @@ foreach (glob("classes/*.php") as $filename) {
                     include_once("pages/itemcard.php");
                 }
 
-
                 ?>
             </div>
         </div>
