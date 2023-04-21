@@ -104,24 +104,17 @@ if (isset($_POST['addCategory'])) {
     }
 }
 
-if (isset($_POST['addImages'])) {
-   
-    $itemid=$_POST['catidForImg'];
-    
-    foreach ($_FILES["files"]["tmp_name"] as $key => $tmp_name) {
+if (isset($_POST['addImages'])) { 
+    $itemid=$_POST['catidForImg'];  
+    foreach ($_FILES["files"]["tmp_name"] as $key => $tmp_name){
         $temp = $_FILES["files"]["tmp_name"][$key];
         $name = $_FILES["files"]["name"][$key];
         $uploadFolder = "images";
-    
-
         if (empty($temp)) {
             break;
         }
-
-         if(move_uploaded_file($temp, $uploadFolder . "/" . $name))
-         {
+        if(move_uploaded_file($temp, $uploadFolder . "/" . $name)){
             $counter++;
-
          }
           
          //Adding to database
@@ -130,7 +123,6 @@ if (isset($_POST['addImages'])) {
          $img->Add();
         
     }
-echo "<script>alert(".$counter."images were uploded)</script>";
-   
+echo "<script>alert(".$counter."images were uploded)</script>";   
 }
 ?>
