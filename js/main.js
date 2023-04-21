@@ -3,13 +3,11 @@ function showCities(countryid){
     {
         document.getElementById("citylist").innerHTML="";
         return;
-
     }
 let ajax;
 if(window.XMLHttpRequest)
 {
     ajax=new XMLHttpRequest();
-
 }
 else {
     ajax=ActiveXObject('Microsoft.XMLHTTP');
@@ -18,19 +16,15 @@ else {
 ajax.onreadystatechange = function()
 {
     if(ajax.readyState==4 && ajax.Status==200)
-    
-    {
-        
+    { 
         document.getElementById("citylist").innerHTML= ajax.responseText;
     }
 }
 ajax.open("GET", "pages/ajax1.php?cid=" +countryid, true);
 ajax.send(null);
-
 }
 
-function showHotels(cityid){
-    
+function showHotels(cityid){   
     let h =  document.getElementById("h");
     if(cityid =="0")
     {
@@ -41,7 +35,6 @@ let ajax;
 if(window.XMLHttpRequest)
 {
     ajax=new XMLHttpRequest();
-
 }
 else {
     ajax=ActiveXObject('Microsoft.XMLHTTP');
