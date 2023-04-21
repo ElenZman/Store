@@ -120,8 +120,7 @@ if (isset($_POST['addImages'])) {
          //Adding to database
          $imagepath = $uploadFolder . "/" . $name;
          $img= new Image($imagepath, $itemid);
-         $img->Add();
-        
+         $img->Add();     
     }
 echo "<script>alert(".$counter."images were uploded)</script>";   
 }
