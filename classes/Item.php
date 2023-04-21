@@ -2,7 +2,6 @@
 
 class Item
 {
-
     public $id;
     public $catid;
     public $imagepath;
@@ -14,7 +13,6 @@ class Item
     public $action;
     function __construct($itemname, $catid, $pricein, $pricesale, $info, $imagepath, $rate = 0, $action = 0, $id = 0)
     {
-
         $this->catid = $catid;
         $this->imagepath = $imagepath;
         $this->info = $info;
@@ -71,7 +69,6 @@ class Item
 
     static function GetItems($catid = 0)
     {
-
         $items = null;
         try {
             $pdo = Tools::connect();
@@ -104,6 +101,7 @@ class Item
             return false;
         }
     }
+    
     function Draw()
     {
         //card!
