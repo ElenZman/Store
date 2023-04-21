@@ -9,13 +9,11 @@
                 <li class="nav-item px-3">
                     <a class="nav-link active" aria-current="page" href="../index.php?page=1">Catalog</a>
                 </li>
-
                 <?php if (isset($_SESSION['role']) && $_SESSION['role'] == 1) : ?>
                     <li class="nav-item px-3">
                         <a class="nav-link" href="../index.php?page=2">Admin</a>
                     </li>
                 <?php endif; ?>
-
                 <li class="nav-item px-3">
                     <a class="nav-link" href="../index.php?page=3">#</a>
                 </li>
@@ -28,11 +26,9 @@
                     </li>
                   
                     <?php else:?>
-
                     <li class="nav-item px-3s">
                         <a class="nav-link" href="../index.php?page=5"><img src="../images/user.png" alt="user icon" style="width: 20px; height: 20px;">&nbsp Login</a>
-                    </li>
-                    
+                    </li>                  
                 <?php endif; ?>
             </ul>
         </div>
