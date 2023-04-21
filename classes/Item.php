@@ -11,6 +11,7 @@ class Item
     public $pricesale;
     public $rate;
     public $action;
+    
     function __construct($itemname, $catid, $pricein, $pricesale, $info, $imagepath, $rate = 0, $action = 0, $id = 0)
     {
         $this->catid = $catid;
