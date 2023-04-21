@@ -16,17 +16,13 @@ class Category{
             $pdo = Tools::connect();
             $category =$this->name;
             $insert = $pdo->prepare("insert into categories (category) values (:category);");
-
             $insert->execute(['category'=>$category]);
             return true;
         } catch (PDOException $ex) {
             $message = $ex->getMessage();
-            echo "<script> alert('Oops, something went wrong! ".$message.")</script>";
-    
+            echo "<script> alert('Oops, something went wrong! ".$message.")</script>"; 
             return false;
         }
     }
-
-
 }
 ?>
