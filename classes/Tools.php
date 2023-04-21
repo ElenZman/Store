@@ -1,10 +1,8 @@
 <?php 
 class Tools
 {
-
     static function connect($host  = "localhost:3306", $user = "root", $pass = "1111", $dbname = "store")
     {
-
         $connect = 'mysql:host=' . $host . ';dbname=' . $dbname . ';charset=utf8;';
         $options = array(
             PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
@@ -32,17 +30,12 @@ class Tools
 
     static function login($login, $pass)
     {
-
         try {
             $connection = Tools::connect();
             $ps = $connection->prepare("select * from customers where login=? and pass=$pass");
             $ps->execute(array($login));
             $user = $ps->fetch();
-
             if ($user) {
-
-
-
                 $_SESSION['id'] = $user['id'];
                 $_SESSION['user'] = $user['login'];
                 $_SESSION['role'] = $user['roleid'];
@@ -50,7 +43,6 @@ class Tools
             }
             else 
             {
-
              echo $message = "Invalid Username or Password!";  
             }
 
