@@ -9,10 +9,8 @@ if (isset($_GET['itemid'])) {
 if (isset($_SESSION['user'])) {
     $ruser = $_SESSION['user'];
 } else {
-
     $ruser = "cart";
 }
-
 ?>
 
 <div class="row border border-danger m-5">
@@ -35,12 +33,10 @@ if (isset($_SESSION['user'])) {
         <div id="carousel"  style="min-height: 200px; min-width: 300px; height: 300px;">
             <div id="carouselExampleControls" class="carousel slide m-auto" data-bs-ride="carousel">
                 <div class="carousel-inner text-center">
-
                     <?php
                     $res = makeSlides($item->id);
                     echo $res;
                     ?>
-
                 </div>
                 <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
                     <span class="carousel-control-prev-icon" style="background-color: grey;" aria-hidden="true"></span>
@@ -54,8 +50,7 @@ if (isset($_SESSION['user'])) {
         </div>
         <p><?php echo "$" . $item->pricesale ?></p>
 
-        <form action=""  method="GET">
-            
+        <form action=""  method="GET">           
             <button type="submit" class="btn btn-success" onclick="createCookie(<?php echo $ruser ?>, <?php echo $item->id ?>)">Add to cart</button>
         </form>
     </div>
