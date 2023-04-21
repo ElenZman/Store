@@ -81,17 +81,6 @@ class Item
                 $select->execute(array($catid));
             }
             while ($row = $select->fetch()) {
-                // $item = new Item(
-                // $row['itemname'],
-                //  $row['catid'],
-                //  $row['pricein'],
-                // $row['pricesale'],
-                // $row['info'],
-                // $row['imagepath'],
-                // $row['rate'],
-                // $row['action'],
-                // $row['id']
-                // );
                 $item = Item::Show($row['id']);
                 $items[] = $item;
             }
