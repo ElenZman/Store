@@ -94,38 +94,29 @@ class Item
     function Draw()
     {
         //card!
-
         echo '<div id="card" class="col-sm-8 col-md-6 col-lg-3 d-flex flex-column mb-5">';
         //itemInfo.php contains detailed info about product
         echo "<div class='text-center p-1' style='background-color: #2c786c; height: fit-content'>";
-
         echo "<a style='color: #f0f8ff;' href='index.php?page=7&itemid=" . $this->id . "' target='_blank'>" . $this->itemname . "</a>";
         echo "<p>" . $this->rate . "&nbsp;rate</p>";
         echo '</div>';
-
-
         echo "<div style='width: 100%; height='150px'>";
         echo "<img class='d-block m-auto my-3' src='" . $this->imagepath . "' style='width: 65%; height: 150px;'/>";
         echo "<p class='m-2 me-3' style='float: right; color:red; font-size:14pt;'>$&nbsp;" . $this->pricesale . "</p>";
         echo "</div>";
-
         echo "<div style='padding: 3%; background-color:lightblue; height:60px;'>";
         echo "<p class='text-truncate'>" . $this->info . "</p>";
         echo "</div>";
 
-
         //creating cookies for the cart
-        //will be explained later
         $ruser = '';
         if (!isset($_SESSION['user']) || $_SESSION['user'] == "") {
             $ruser = "cart";
         } else {
             $ruser = $_SESSION['user'];
-        }
-       
+        } 
         echo "<button class='my-1 btn btn-success' onclick=createCookie('".$ruser."',$this->id)>
         Add To My Cart</button>";
-
         echo '</div>';
     }
 
@@ -144,7 +135,6 @@ class Item
         }
         echo "<button class='btn btn-danger col-1' style='margin-left:10px;'
         onclick=eraseCookie('$ruser',$this->id)>x</button>";
-
         echo "</div>";
     }
 
@@ -171,7 +161,6 @@ class Item
     }
 }
 ?>
-
 <script>
     function createCookie(userName, id) {
         alert('i got here');
@@ -179,8 +168,5 @@ class Item
          document.cookie = userName + "_" + id + "; path=/;expires=" + date.toUTCString();
          let d=document.cookie;
          alert(d);
-           
-    
-
     }
 </script>
