@@ -12,7 +12,6 @@
                 </div>
             </div>
         </div>
-
     </form>
 
 <?php
@@ -30,11 +29,11 @@ if (isset($_POST['register'])) {
         echo '<div>Password is incorrect</div>';
         exit();
     }
+    
     if (is_uploaded_file($_FILES['avatar']['tmp_name'])) {
         $path = "images/" . $_FILES['avatar']['name'];
         move_uploaded_file($_FILES['avatar']['tmp_name'], $path);
         Tools::createUser($login, $password1, $path);
     }
 }
-
 ?>
