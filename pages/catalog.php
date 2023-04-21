@@ -10,26 +10,21 @@
             while ($row = $ps->fetch()) {
                 echo '<option value="' . $row['id'] . '">' . $row['category'] . '</option>';
             }
-
             ?>
         </select>
     </div>
-    <?php
-   
-   echo '<div id="card-container" class="row m-auto justify-content-between d-flex flex-wrap" style="width: 80%; height: fit-content;">';
-    
+   <?php  
+   echo '<div id="card-container" class="row m-auto justify-content-between d-flex flex-wrap" style="width: 80%; height: fit-content;">';  
     $items = Item::GetItems();
     foreach ($items as $item) {
         $item->Draw();
     }
-    echo '</div>';
-   
+    echo '</div>';  
     ?>
 </form>
 
 <script>
-    function getItemsCat(cat) {
-               
+    function getItemsCat(cat) {            
         if (cat == "") {
            //здесь был 'result' 
             document.getElementById('card-container').innerHTML = "";
@@ -52,9 +47,6 @@
     function createCookie(userName, id)
     {
        let date =new Date(new Date().getTime() + 60*1000*30);
-       document.cookie = userName + "_" +id+ "; path=/;expires="+ date.toUTCString(); 
-      
+       document.cookie = userName + "_" +id+ "; path=/;expires="+ date.toUTCString();    
     }
-
-   
 </script>
