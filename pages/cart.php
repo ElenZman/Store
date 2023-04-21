@@ -7,8 +7,7 @@ if (!isset($_SESSION['user']) || $_SESSION['user'] == "") {
     $ruser = $_SESSION['user'];
 }
 
-$total;
-    
+$total;   
 foreach ($_COOKIE as $k => $v) {
     $pos = strpos($k, "_");
     if (substr($k, 0, $pos) == $ruser) {
@@ -24,8 +23,6 @@ echo '<button type="submit" class="btn btn-success" name="buy" style="margin-lef
 echo '</form>';
 
 if (isset($_POST['buy'])) {
-    
-    
     foreach ($_COOKIE as $k => $v) {
         $pos = strpos($k, "_");
         if (substr($k, 0, $pos) == $ruser) {
@@ -37,7 +34,6 @@ if (isset($_POST['buy'])) {
     }
     echo "<script>";
     echo "function DeleteAll(uname){";
-
 ?>
 
     let array = document.cookie.split(';');
@@ -52,13 +48,12 @@ if (isset($_POST['buy'])) {
 }
 
 <?php
-
     echo "DeleteAll('$ruser');";
     echo "window.location = document.URL;";
     echo "</script>";
 }
-
 ?>
+                                   
 <script>
      function createCookie(userName, id)
     {
@@ -78,6 +73,5 @@ if (isset($_POST['buy'])) {
             document.cookie = theCookie[0]+"=id; path=/; expires=" + date.toUTCString();
         }
        }
-
     }
     </script>
