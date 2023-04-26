@@ -164,8 +164,7 @@ class Item
 ?>
 <script>
     function createCookie(userName, id) {
-        alert('i got here');
-        let date = new Date(new Date().getTime() + 60 * 1000 * 30);
+         let date = new Date(new Date().getTime() + 60 * 1000 * 30);
          document.cookie = userName + "_" + id + "; path=/;expires=" + date.toUTCString();
          let d=document.cookie;
          alert(d);
