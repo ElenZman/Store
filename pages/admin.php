@@ -115,8 +115,7 @@ if (isset($_POST['addImages'])) {
         }
         if(move_uploaded_file($temp, $uploadFolder . "/" . $name)){
             $counter++;
-         }
-          
+         }        
          //Adding to database
          $imagepath = $uploadFolder . "/" . $name;
          $img= new Image($imagepath, $itemid);
